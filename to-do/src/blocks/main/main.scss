@@ -1,3 +1,8 @@
+@import '../../vendor/_const';
+
 .main {
-    padding: 20px;
+    color: $title-color;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }

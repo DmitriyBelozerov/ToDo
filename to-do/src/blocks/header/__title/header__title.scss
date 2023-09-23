@@ -1,8 +1,8 @@
-$title-color: #fa991c;
+@import '../../../vendor/_const';
 
 .header__title {
-  margin: 0;
-  padding: 0;
+  margin: 0; 
+  padding: 20px;
   color: $title-color;
   text-align: center;
 }
