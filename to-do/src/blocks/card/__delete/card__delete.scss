@@ -1,0 +1,7 @@
+@import "../../../vendor/const";
+
+.card__delete {
+  @extend %card__icon;
+  background-image: url(../../../images/delete.svg);
+  background-color: rgb(255, 203, 203);
+}

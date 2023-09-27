@@ -1,0 +1,7 @@
+@import "../../../vendor/const";
+
+.card__priority {
+  @extend %card__icon;
+  background-image: url(../../../images/arrow-square-up.svg);
+  background-color: rgb(104, 252, 104);
+}

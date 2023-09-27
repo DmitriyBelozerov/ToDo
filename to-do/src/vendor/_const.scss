@@ -1,2 +1,15 @@
 $title-color: #fa991c;
 $button-color: #53d3d1;
+$item-todo-color: #FBECEB;
+$icon-height-width: 30px;
+
+
+%card__icon {
+    min-width: $icon-height-width;
+    height: $icon-height-width;
+    margin-left: 15px;
+    border-radius: 5px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: 1px solid;
+}
