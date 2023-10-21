@@ -9,8 +9,9 @@ function App() {
     setArrTodo([point, ...arrTodo])
   }
 
-  function handleDeleteCard() {
-    console.log(1);
+  function handleDeleteCard(item) {
+    setArrTodo(arrTodo.filter(i => { return i !== item }
+    ))
   }
 
   return (
