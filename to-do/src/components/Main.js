@@ -27,7 +27,7 @@ function Main(props) {
                 <section>
                     <ul  className="list">
                         {props.listTodo.map((item, index) =>
-                            <Card item={item} key={index} handleDeleteCard={props.handleDeleteCard} number={index}/>
+                            <Card item={item} key={index} handleDeleteCard={props.handleDeleteCard} number={index} handleMoveElement={props.handleMoveElement}/>
                         )}
                     </ul>
                 </section>

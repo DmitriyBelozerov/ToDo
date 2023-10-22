@@ -14,10 +14,14 @@ function App() {
     ))
   }
 
+  function handleMoveElement (i) {
+    console.log(i);
+  }
+
   return (
     <div>
       <Header />
-      <Main onAddTodo={handleAddTodo} listTodo={arrTodo} handleDeleteCard={handleDeleteCard} />
+      <Main onAddTodo={handleAddTodo} listTodo={arrTodo} handleDeleteCard={handleDeleteCard} handleMoveElement={handleMoveElement}/>
     </div>
   );
 }
