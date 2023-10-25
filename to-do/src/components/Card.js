@@ -12,7 +12,7 @@ function Card(props) {
     }
 
     function moveElement() {
-        props.handleMoveElement(props.item)
+        props.handleMoveElement(props.index)
     }
 
     return (

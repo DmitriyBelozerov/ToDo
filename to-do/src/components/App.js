@@ -10,18 +10,23 @@ function App() {
   }
 
   function handleDeleteCard(item) {
-    setArrTodo(arrTodo.filter(i => { return i !== item }
-    ))
+    console.log(arrTodo);
+    // setArrTodo(arrTodo.filter(i => { return i !== item }
+    // ))
   }
 
-  function handleMoveElement (i) {
-    console.log(i);
+  function handleMoveElement(index) {
+    const newList = [...arrTodo];
+    newList.splice(index -1, 2, arrTodo[index], arrTodo[index - 1]);
+    setArrTodo(newList)
   }
+
+
 
   return (
     <div>
       <Header />
-      <Main onAddTodo={handleAddTodo} listTodo={arrTodo} handleDeleteCard={handleDeleteCard} handleMoveElement={handleMoveElement}/>
+      <Main onAddTodo={handleAddTodo} listTodo={arrTodo} handleDeleteCard={handleDeleteCard} handleMoveElement={handleMoveElement} />
     </div>
   );
 }
