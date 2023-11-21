@@ -10,9 +10,8 @@ function App() {
   }
 
   function handleDeleteCard(item) {
-    console.log(arrTodo);
-    // setArrTodo(arrTodo.filter(i => { return i !== item }
-    // ))
+    setArrTodo(arrTodo.filter(i => { return i !== item }
+    ))
   }
 
   function handleMoveElement(index) {
