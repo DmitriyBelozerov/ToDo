@@ -5,7 +5,6 @@ import Main from './Main';
 import api from '../utils/api';
 
 function App() {
-  const [arrTodo, setArrTodo] = React.useState([]);
   const [itemsTodo, setItemsTodo] = React.useState([]);
 
   React.useEffect(() => {
@@ -16,8 +15,13 @@ function App() {
       .catch(err => console.log(err))
   }, [])
 
-  function handleAddTodo(point) {
-    setArrTodo([point, ...arrTodo])
+  function handleAddTodo(newItemTodo) {
+    api.createItemTodo(newItemTodo)
+    .then((data) => {
+      console.log(data);
+      console.log(itemsTodo);
+      setItemsTodo([ ...itemsTodo, data.data])
+    })
   }
 
   function handleDeleteCard(item) {
@@ -29,9 +33,6 @@ function App() {
   }
 
   function handleMoveElement(index) {
-    const newList = [...arrTodo];
-    newList.splice(index - 1, 2, arrTodo[index], arrTodo[index - 1]);
-    setArrTodo(newList)
   }
 
 

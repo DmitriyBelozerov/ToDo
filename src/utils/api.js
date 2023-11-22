@@ -21,21 +21,20 @@ class Api {
     }
 
     getItemsTodo() {
-        return fetch(`${this._baseUrl}`, {
+        return fetch(this._baseUrl, {
             credentials: 'include',
             headers: this._header,
         })
             .then(this._getJsonOrError)
     }
 
-    createItemTodo(newName, newLink) {
-        return fetch(`${this._baseUrl}`, {
+    createItemTodo(name) {
+        return fetch(this._baseUrl, {
             method: 'POST',
             credentials: 'include',
             headers: this._header,
             body: JSON.stringify({
-                name: `${newName}`,
-                link: `${newLink}`
+                name
             }),
         })
             .then(this._getJsonOrError)
