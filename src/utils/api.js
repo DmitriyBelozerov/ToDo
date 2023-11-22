@@ -22,7 +22,6 @@ class Api {
 
     getItemsTodo() {
         return fetch(`${this._baseUrl}`, {
-            mode: 'no-cors',
             credentials: 'include',
             headers: this._header,
         })

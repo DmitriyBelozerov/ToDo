@@ -6,12 +6,12 @@ import api from '../utils/api';
 
 function App() {
   const [arrTodo, setArrTodo] = React.useState([]);
-  // const [itemsTodo, setItemsTodo] = React.useState([]);
+  const [itemsTodo, setItemsTodo] = React.useState([]);
 
   React.useEffect(() => {
     api.getItemsTodo()
       .then((data) => {
-        console.log(data)
+        setItemsTodo(data)
       })
       .catch(err => console.log(err))
   }, [])
@@ -21,8 +21,11 @@ function App() {
   }
 
   function handleDeleteCard(item) {
-    setArrTodo(arrTodo.filter(i => { return i !== item }
-    ))
+    api.deleteItemTodo(item._id)
+    .then((data)=> {
+      setItemsTodo(itemsTodo.filter(i => i._id !== item._id))
+    })
+    .catch(err => console.log(err))
   }
 
   function handleMoveElement(index) {
@@ -36,7 +39,7 @@ function App() {
   return (
     <div>
       <Header />
-      <Main onAddTodo={handleAddTodo} listTodo={arrTodo} handleDeleteCard={handleDeleteCard} handleMoveElement={handleMoveElement} />
+      <Main onAddTodo={handleAddTodo} listTodo={itemsTodo} handleDeleteCard={handleDeleteCard} handleMoveElement={handleMoveElement} />
     </div>
   );
 }
